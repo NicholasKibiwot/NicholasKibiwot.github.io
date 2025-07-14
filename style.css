@@ -92,6 +92,18 @@ article span{font-size:.8rem;color:var(--muted);}
 article ul{margin-top:.75rem;padding-left:1.25rem;}
 article li{margin-bottom:.5rem;font-size:.9rem;}
 
+/* PROFILE PIC */
+.profile-wrap{
+  margin-bottom:1.5rem;
+}
+.profile{
+  width:160px;               /* adjust size */
+  height:160px;
+  border-radius:50%;
+  object-fit:cover;
+  border:3px solid var(--accent);
+  background:none;           /* keeps PNG transparency */
+}
 /* CONTACT */
 .contact{text-align:center;}
 .contact p{margin:.5rem 0;}
