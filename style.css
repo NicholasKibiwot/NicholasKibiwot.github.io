@@ -28,9 +28,13 @@ a:hover{opacity:.7;}
   z-index:1000;
 }
 #topnav .container{
-  max-width:1100px;margin:auto;
-  display:flex;align-items:center;gap:2rem;
+  max-width:1100px;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  gap:2rem;
   padding:.75rem 1rem;
+  justify-content:center;   /* ← new line */
 }
 #topnav a{
   font-family:var(--mono);
@@ -99,8 +103,8 @@ article li{margin-bottom:.5rem;font-size:.9rem;}
   margin-bottom:1rem;
 }
 .profile{
-  width:100px;
-  height:100px;
+  width:200px;
+  height:200px;
   border-radius:50%;
   object-fit:cover;
   border:2px solid var(--accent);
