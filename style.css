@@ -120,9 +120,22 @@ article li{margin-bottom:.5rem;font-size:.9rem;}
   border-left:3px solid var(--accent);
 }
 
-/* CONTACT */
-.contact{text-align:center;}
-.contact p{margin:.5rem 0;}
+/* CONTACT ICONS */
+.contact-icons{
+  display:flex;
+  justify-content:center;
+  gap:1.5rem;
+  margin-top:1.5rem;
+}
+.contact-icons a{
+  color:var(--muted);
+  font-size:1.75rem;
+  transition:var(--transition);
+}
+.contact-icons a:hover{
+  color:var(--accent);
+  transform:scale(1.15);
+}
 
 /* RESPONSIVE */
 @media(max-width:600px){
