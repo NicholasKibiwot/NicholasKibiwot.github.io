@@ -5,38 +5,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Nicholas Kibiwot – Software Engineer & IT Support Lead</title>
   <link rel="stylesheet" href="style.css"/>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
 </head>
 <body>
-  <!-- FIXED TOP NAV -->
+
+  <!-- FIXED TOP NAV (centered) -->
   <nav id="topnav">
     <div class="container">
       <a href="#about">About</a>
       <a href="#core">Core Skills</a>
       <a href="#experience">Experience</a>
-      <a href="#education">Education</a>
+      <a href="#projects">Projects</a>
+      <a href="#lab-challenges">Lab&nbsp;Challenges</a>
       <a href="#contact">Contact</a>
     </div>
   </nav>
 
   <!-- MAIN SCROLLABLE CONTENT -->
   <main>
-   <!-- HERO -->
-<section id="about" class="hero">
-  <div class="container">
-    <!-- NEW: profile pic -->
-    <div class="profile-wrap">
-      <img src="assets/images/profile.jpg" alt="Nicholas Kibiwot" class="profile" />
-    </div>
 
-    <h1>Nicholas Kibiwot</h1>
-    <p class="tagline">Software Engineer · Tech enthusiast</p>
-    <p class="bio">
-      Diploma-educated Software Engineer with 4+ years delivering IT support and data-annotation solutions for fast-growing organizations. Cisco-certified CCNA professional recognized for creative problem-solving, meticulous attention to detail, and an ability to master new technologies quickly.
-    </p>
-    <a class="cta" href="#contact">Get in touch</a>
-  </div>
-</section>
+    <!-- HERO -->
+    <section id="about" class="hero">
+      <div class="container">
+        <div class="profile-wrap">
+          <img src="assets/images/profile.jpg" alt="Nicholas Kibiwot" class="profile">
+        </div>
+        <h1>Nicholas Kibiwot</h1>
+        <p class="tagline">Software Engineer · Tech enthusiast</p>
+        <p class="bio">
+          Diploma-educated Software Engineer with 4+ years delivering IT support and data-annotation solutions for fast-growing organizations. Cisco-certified CCNA professional recognized for creative problem-solving, meticulous attention to detail, and an ability to master new technologies quickly.
+        </p>
+        <a class="cta" href="#contact">Get in touch</a>
+      </div>
+    </section>
 
     <!-- CORE COMPETENCIES -->
     <section id="core">
@@ -91,21 +92,80 @@
       </div>
     </section>
 
-    <!-- EDUCATION & CERTIFICATIONS -->
-    <section id="education">
+    <!-- PROJECTS -->
+    <section id="projects">
       <div class="container">
-        <h2>Education & Certifications</h2>
+        <h2>Projects</h2>
 
-        <h3>Diploma in Software Engineering – Zetech University (2020)</h3>
-        <p>Coursework: OOP, Database Design, Network Security, Web Technologies</p>
+        <article>
+          <h3>
+            <a href="https://github.com/NicholasKibiwot/NetMon" target="_blank" rel="noopener">
+              NetMon – Network Monitoring Dashboard
+            </a>
+          </h3>
+          <p>Lightweight Python/Flask dashboard that polls SNMP-enabled devices and visualizes bandwidth, CPU, and memory in real time.</p>
+          <ul>
+            <li><strong>Stack:</strong> Flask, SQLite, Chart.js, SNMP</li>
+            <li><strong>Highlight:</strong> Auto-threshold alerts via e-mail & Telegram bot</li>
+          </ul>
+        </article>
 
-        <h3>Cisco Certifications</h3>
-        <ul>
-          <li>CCNA R&S: Introduction to Networks (2020)</li>
-          <li>CCNA R&S: Routing and Switching Essentials (2020)</li>
-          <li>CCNA R&S: Connecting Networks (2020)</li>
-          <li>CCNAv7: Enterprise Networking, Security & Automation (2021)</li>
-        </ul>
+        <article>
+          <h3>
+            <a href="https://github.com/NicholasKibiwot/CTF-NoteKeeper" target="_blank" rel="noopener">
+              CTF-NoteKeeper
+            </a>
+          </h3>
+          <p>A React + Node note-taking app tailored for CTF players: markdown support, flag-time tracker, and PDF export.</p>
+          <ul>
+            <li><strong>Stack:</strong> MERN, JWT auth, Tailwind UI</li>
+            <li><strong>Highlight:</strong> Offline-first PWA; installs as a desktop app</li>
+          </ul>
+        </article>
+
+        <article>
+          <h3>
+            <a href="https://github.com/NicholasKibiwot/CliWeather" target="_blank" rel="noopener">
+              CliWeather
+            </a>
+          </h3>
+          <p>Cross-platform CLI tool written in Go that fetches and displays weather data from OpenWeatherMap with ASCII-art icons.</p>
+          <ul>
+            <li><strong>Stack:</strong> Go, Cobra CLI, REST APIs</li>
+            <li><strong>Highlight:</strong> Single 6 MB static binary, no dependencies</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- LAB CHALLENGES / CTF WRITE-UPS -->
+    <section id="lab-challenges">
+      <div class="container">
+        <h2>Lab Challenges & CTF Write-ups</h2>
+
+        <article>
+          <h3>OverTheWire – Bandit Level 15 → 16</h3>
+          <p><strong>Problem:</strong> Retrieve the password by talking to a localhost SSL service on port 30001.</p>
+          <p><strong>Approach:</strong> Used <code>openssl s_client -connect localhost:30001</code>, sent the current password, received the next flag.</p>
+          <p><strong>Tools:</strong> openssl, bash</p>
+          <p><strong>Lesson:</strong> Certificate-less SSL sockets and the power of built-in *nix tools.</p>
+        </article>
+
+        <article>
+          <h3>TryHackMe – Blue (EternalBlue)</h3>
+          <p><strong>Problem:</strong> Exploit SMBv1 vulnerability on Windows 7 to gain SYSTEM shell.</p>
+          <p><strong>Approach:</strong> Nmap → Metasploit <code>ms17_010_eternalblue</code> → post-exploit hashdump & persistence.</p>
+          <p><strong>Tools:</strong> nmap, Metasploit, Meterpreter</p>
+          <p><strong>Lesson:</strong> Importance of patching and disabling legacy protocols.</p>
+        </article>
+
+        <article>
+          <h3>HackTheBox – Starting-Point: Vaccine</h3>
+          <p><strong>Problem:</strong> Obtain user & root flags on a Linux box running a custom web app with SQLi & password reuse.</p>
+          <p><strong>Approach:</strong> SQLMap → LFI → credential reuse → sudo enumeration → privilege escalation via path hijack.</p>
+          <p><strong>Tools:</strong> SQLMap, Burp Suite, linPEAS</p>
+          <p><strong>Lesson:</strong> Never reuse passwords across services; always check sudo version & PATH.</p>
+        </article>
       </div>
     </section>
 

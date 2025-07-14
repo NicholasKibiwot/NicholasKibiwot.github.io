@@ -34,7 +34,7 @@ a:hover{opacity:.7;}
   align-items:center;
   gap:2rem;
   padding:.75rem 1rem;
-  justify-content:center;   /* ← new line */
+  justify-content:center;   /* keep nav centered */
 }
 #topnav a{
   font-family:var(--mono);
@@ -96,20 +96,30 @@ article span{font-size:.8rem;color:var(--muted);}
 article ul{margin-top:.75rem;padding-left:1.25rem;}
 article li{margin-bottom:.5rem;font-size:.9rem;}
 
-/* PROFILE PIC */
+/* PROFILE PIC (NEW small circle) */
 .profile-wrap{
   display:flex;
   justify-content:center;
   margin-bottom:1rem;
 }
 .profile{
-  width:200px;
+  width:200px;            /* NEW small size */
   height:200px;
   border-radius:50%;
   object-fit:cover;
   border:2px solid var(--accent);
-  background:none;      /* keeps PNG transparency */
+  background:none;       /* keeps PNG transparency */
 }
+
+/* PROJECTS & LAB CHALLENGES (NEW shared styling) */
+#projects article,
+#lab-challenges article{
+  background:var(--bg2);
+  margin-bottom:2rem;
+  padding:1.5rem;
+  border-left:3px solid var(--accent);
+}
+
 /* CONTACT */
 .contact{text-align:center;}
 .contact p{margin:.5rem 0;}
