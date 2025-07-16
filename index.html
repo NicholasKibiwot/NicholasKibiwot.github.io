@@ -176,9 +176,17 @@
       <div class="container">
         <h2>Contact</h2>
         <div class="contact-icons">
-        <a href="mailto:nicholas.kibiwot95@gmail.com" aria-label="Email">
-            <i class="fas fa-envelope"></i>
-          </a>
+        <a href="#" aria-label="Email" onclick="
+          var isMobile = /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|Mobile/i.test(navigator.userAgent);
+          if (isMobile) {
+            window.location.href = 'googlegmail://co?to=nicholas.kibiwot95@gmail.com';
+          } else {
+            window.open('https://mail.google.com/mail/?view=cm&fs=1&to=nicholas.kibiwot95@gmail.com', '_blank');
+          }
+          return false;
+        ">
+          <i class="fas fa-envelope"></i>
+        </a>
           <a href="https://wa.me/254703115290" aria-label="WhatsApp">
             <i class="fab fa-whatsapp"></i>
           </a>
